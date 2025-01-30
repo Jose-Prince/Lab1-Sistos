@@ -2,14 +2,12 @@
 #include <unistd.h>
 
 int main() {
-    int f = fork(); // Crea un nuevo proceso
+    int f = fork();
 
     if (f == 0) {
-        // Proceso hijo
-        execl("./helloworld", "hello", (char*)NULL); // Ejecuta el programa helloworld
+        execl("./helloworld", "hello", (char*)NULL);
     } else {
-        // Proceso padre
-        printf("%d\n", (int)getpid()); // Imprime el PID del proceso padre
+        printf("%d\n", (int)getpid());
     }
 
     return 0;
